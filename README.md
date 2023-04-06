@@ -123,3 +123,184 @@ int main(void)
     return 0;
 }
 ```
+
+6주차 while 구구단 출력
+```C
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+int main(void)
+
+{
+    int n;
+    int i = 1;
+
+    printf("출력하고 싶은 단: ");
+    scanf("%d", &n);
+
+    while (i <= 9)
+    {
+        printf("%d*%d = %d\n", n, i, n*i);
+        i++;
+    }
+
+    return 0;
+}
+```
+무한루프일때 if break로 끊기
+
+```C
+while (i > 0)
+    {
+        printf("%d*%d = %d\n", n, i, n*i);
+        i++;
+
+        if (i == 10)
+        {
+            break;
+        }
+    }
+```
+
+6주차 1부터 n까지의 합
+```C
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+int main(void)
+
+{
+    int n;
+    int i = 1;
+    int sum = 0;
+
+    printf("정수를 입력하시오: ");
+    scanf("%d", &n);
+
+    while (i <= n)
+    {
+        sum = sum + i;
+        i++;
+    }
+    
+    printf("1부터 %d까지의 합은 %d입니다", n, sum);
+    return 0;
+}
+```
+짝수값만 더하기
+```C
+ while (i <= n)
+    {
+        if(i % 2 == 0)
+        {
+            sum = sum + i;
+            printf("%d\n", i); /*i값 확인용*/
+        }
+        i++;
+    }
+```
+while로 n번 입력받아 출력하기
+```c
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+int main(void)
+
+{
+    int A, B;
+    int T, i = 1;
+    int sum;
+
+    scanf("%d", &T); /*입력받을 횟수*/
+
+    while (i <= T)
+    {
+        scanf("%d %d", &A, &B);
+        sum = A + B;
+        printf("%d\n", sum);
+        i++;
+    }
+
+    return 0;
+}
+```
+do while 문
+
+```c
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+int main(void)
+
+{
+    int i = 0;
+    do /* do...while문: while의 조건과 상관없이 루프 바디를 무조건 한번은 실행한다*/
+    {
+        printf("1---새로만들기\n");
+        printf("2---파일열기\n");
+        printf("3---파일닫기\n");
+        printf("하나를 선택하시오");
+        scanf("%d", &i);
+    } while (i < 1 || i > 3);
+    
+    printf("선택된 메뉴=%d\n", i);
+    return 0;
+}
+```
+6주차 숫자맞추기
+
+```c
+#include <stdio.h>
+#include <stdlib.h> /*스탠다드 라이브러리*/
+#define _CRT_SECURE_NO_WARNINGS
+
+int main(void)
+
+{
+    srand((unsigned)time(NULL)); // 난수 발생기 시드 설정
+    int answer = rand()%100; // 정답을 난수로 발생한다. 
+    int guess;
+    int tries = 0;
+    
+    do {
+        printf("정답을 추측하시오: ");
+        scanf("%d", &guess);
+        tries++;
+        if (guess > answer)
+            printf("LOW\n");
+        else if (guess < answer)
+            printf("HIGH\n");
+    } while (guess != answer);
+
+    printf("정답=%d\n", answer);
+    printf("축하합니다. 시도횟수=%d", tries);
+    return 0;
+}
+```
+오른쪽부터 채워지는 계단만들기 for문으로
+
+```c
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+int main(void)
+{
+    int g;
+    scanf("%d", &g);
+
+    for (int i = 1; i <= g; i++)
+    {
+        for (int j = 1; j <= g-i; j++)
+        {
+            printf(" ");
+        }
+        for (int j = 1; j <= i; j++)
+        {
+            printf("*");
+        }
+
+    printf("\n");
+    }
+
+}
+```
