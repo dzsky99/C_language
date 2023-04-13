@@ -304,3 +304,27 @@ int main(void)
 
 }
 ```
+7주차 사용자 정의 함수 및 조건 수식 연산자 
+
+```c
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+int max(int x, int y)
+{
+    return (x>y)? x : y; // 조건 수식 연산자
+}
+
+
+int main(void)
+{
+    int x, y, larger;
+    printf("정수 2개를 입력하시오.");
+    scanf("%d %d", &x, &y);
+
+    larger = max(x, y);
+    printf("더 큰 값은 %d입니다. \n", larger);
+    return 0;
+}
+```
+전역변수랑 지역변수 차이 알기
