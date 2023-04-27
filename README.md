@@ -346,3 +346,19 @@ int main(void)
 
 /*함수에서*/ const 자료형 기호상수이름 값
 ```
+
+예시
+```C
+#include <stdio.h>
+#define TAX_RATE 0.2 //기호상수 선언
+int main(void)
+{
+    const int MONTHS = 12; // 기호상수 선언
+    int m_salary, y_salary; 
+    printf( "월급을 입력하시요: "); 
+    scanf("%d", &m_salary);
+    y_salary = MONTHS * m_salary; 
+    printf("연봉은 %d입니다.", y_salary);
+    printf("세금은 %f입니다.", y_salary*TAX_RATE);
+}
+```
