@@ -364,3 +364,77 @@ int main(void)
     printf("세금은 %f입니다.", y_salary*TAX_RATE);
 }
 ```
+
+# 10주차
+## 함수의 원형
+(설명)
+```C
+#include <stdio.h>
+
+int get_integer();
+int add(int x, int y); // 컴파일러가 알아듣도록 함수의 원형을 써준다
+int multi(int x, int y);
+int div(int x, int y);
+int factorial(int x);
+
+int main()
+{
+    int x = get_integer();
+    int y = get_integer();
+
+    printf("합은 %d입니다.\n", add(x, y));
+    printf("곱은 %d입니다.\n", multi(x, y));
+    printf("분은 %d입니다.\n", div(x, y));
+    printf("%d! = %d", x, factorial(x));
+}
+
+
+int get_integer()
+{
+    int value;
+
+    printf("정수를 입력하시오: ");
+    scanf("%d", &value);
+
+    return value;
+}
+
+int add(int x, int y)
+{
+    return x + y;
+}
+
+int multi(int x, int y)
+{
+    return x * y;
+}
+
+int div(int x, int y)
+{
+    return x / y;
+}
+
+/* int factorial(int x)     //for문 팩토리얼
+{
+    int sum = 1;
+
+    for(int i=1; i<=x; i++)
+    {
+        sum *= i;
+    }
+
+    return sum;
+} */
+
+int factorial(int x)     //재귀함수 팩토리얼
+{
+    if(x == 1)
+    {
+        return 1;
+    }
+    else
+    {
+        return x * factorial(x-1);     // x * ... 4 * 3 * 2 * 1 
+    }
+}
+```
