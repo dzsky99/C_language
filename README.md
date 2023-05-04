@@ -382,7 +382,7 @@ int main()
     int x = get_integer();
     int y = get_integer();
 
-    printf("합은 %d입니다.\n", add(x, y));
+    printf("합은 %d입니다.\n", add(x, y)); // 함수의 원형이 없다면 오류
     printf("곱은 %d입니다.\n", multi(x, y));
     printf("분은 %d입니다.\n", div(x, y));
     printf("%d! = %d", x, factorial(x));
