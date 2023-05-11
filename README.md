@@ -2,7 +2,8 @@
 C language practice
 
 <br>
-## [과제입니다.](homework.md)
+
+## [과제 바로가기](homework.md)
 
 <br><br>
 
