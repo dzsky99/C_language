@@ -3,7 +3,7 @@ C language practice
 
 <br>
 
-## [과제 바로가기](https://github.com/dzsky99/C_language/blob/main/homework.md)
+## [과제 바로가기](main/homework.md)
 
 <br><br>
 
