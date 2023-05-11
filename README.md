@@ -1,10 +1,11 @@
 # C_language
 C language practice
 
-https://github.com/dzsky99/C_language/edit/main/homework.md
+<br>
+## [과제입니다.](homework.md)
 
-```C
-```
+<br><br>
+
 
 4주차 나머지 연산자
 
