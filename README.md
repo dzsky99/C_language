@@ -438,3 +438,42 @@ int factorial(int x)     //재귀함수 팩토리얼
     }
 }
 ```
+
+# 11주차
+
+소수찾기
+```C
+include <stdio.h>
+
+int is_prime(int n);
+
+int main()
+{
+    int n = 0;
+    printf("정수를 입력하세요.\n");
+    scanf("%d", &n);
+
+    is_prime(n);  
+}
+
+int is_prime(int n)
+{
+    int counter = 0;
+
+    for(int i=1; i<n; i++)
+    {
+        for(int j=1; j<=i; j++)
+        {
+            if(i % j == 0)
+            {
+                counter += 1;
+            }
+        }
+        if(counter == 2)
+        {
+            printf("%d ", i);
+        } 
+    counter = 0;
+    }
+}
+```
