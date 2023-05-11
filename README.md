@@ -1,6 +1,8 @@
 # C_language
 C language practice
 
+https://github.com/dzsky99/C_language/edit/main/homework.md
+
 ```C
 ```
 
