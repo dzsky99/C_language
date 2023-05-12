@@ -88,8 +88,8 @@ int main(void)
         break;
     }
     printf("종료되었습니다.\n");
-    end = time(NULL);
-    printf("경과된 시간은 %ld 초입니다. \n", end - start);
-    return 0;
+    end = time(NULL); 
+    printf("경과된 시간은 %ld 초입니다. \n", end - start); // time 함수는 1970년 1월 1일 0시 0분 0초에서부터 흐른 시간을 초 단위로 나타내기 때문에
+    return 0;                                            // end에서 start를 빼주면 흐른 시간을 알 수 있다.                      
 }
 ```
