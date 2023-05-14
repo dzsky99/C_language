@@ -93,3 +93,120 @@ int main(void)
     return 0;                                            // end에서 start를 빼주면 흐른 시간을 알 수 있다.                      
 }
 ```
+
+## 삼각함수 그리기
+
+```c
+#include <stdio.h>
+#include <math.h>
+#define PI 3.141592 // 기호상수 선언
+
+
+double rad(double degree)
+{
+    return PI * degree / 180.0;
+}
+
+void drawbar(int height)
+{
+    for (int i = 0; i < height; i++)
+        {
+            printf("*"); // height만큼 *출력
+        }
+    printf("\n");
+}
+
+
+int main(void)
+{
+    int degree, x, y;
+    for (degree = 0; degree <= 180; degree += 10) // sin(0) 에서 sin(pi)까지 rad를 pi/18씩 증가시킴 
+    {                                                   // 싸인값은 -1.0에서 1.0이므로 정수로 반올림하여서 증폭한다.
+        y = (int)(60 * sin(rad((double)degree)) + 0.5); // *60, +0.5는 값을 크게하기 위한 장치
+        drawbar(y); // (int), (double)로 형변환
+    }
+return 0;
+}
+```
+
+## 공학용 계산기
+
+```c
+#include <stdio.h>
+#include <math.h> //수학 관련 함수 사용
+
+
+int menu(void)
+{
+    int n;
+    printf("1.팩토리얼\n");
+    printf("2.싸인\n");
+    printf("3.로그(base 10)\n");
+    printf("4.제곱근\n");
+    printf("5.순열(nPr)\n");
+    printf("6.조합(nCr)\n");
+    printf("7.종료\n");
+    printf("선택해주세요: ");
+    scanf("%d", &n); 
+    return n; 
+}
+
+void factorial() 
+{
+    long long n, result=1, i;
+    printf("정수를 입력하시오: ");
+    scanf("%lld", &n);
+    for (i = 1; i <= n; i++) 
+        result = result * i;
+    printf("결과 = %lld\n\n", result);
+}
+
+void sine() 
+{
+    double a, result;
+    printf("각도를 입력하시오: ");
+    scanf("%lf", &a);
+    result = sin(a);
+    printf("결과 = %lf\n\n", result);
+}
+
+void logBase10()
+{
+    double a, result;
+    printf("실수값을 입력하시오: ");
+    scanf("%lf", &a);
+    if (a <= 0.0) 
+        printf("오류\n");
+    else 
+    {
+        result = log10(a);
+        printf("결과 = %lf\n\n", result);
+    }
+}
+// 제곱근을 구하는 함수 sqrt()
+int main(void)
+{
+    while (1) // while문에서 0이 반환되면 반복을 멈춘다.
+    {
+        switch (menu()) // menu()의 반환값에 따라 case를 실행한다.
+        {
+            case 1:
+                factorial();
+                break;
+            case 2:
+                sine();
+                break;
+            case 3:
+                logBase10();
+                break;
+            case 7:
+                printf("종료합니다.\n");
+                return 0;
+            default:
+                printf("잘못된 선택입니다.\n");
+                break;
+        }
+    }
+}
+
+```
